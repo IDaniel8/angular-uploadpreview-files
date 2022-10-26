@@ -1,17 +1,18 @@
-import { APP_CONFIG } from '../config/app.config';
-import { AppComponent } from './app.component';
+import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
-import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
-import { SharedModule } from '@appshared/shared.module';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
+import { SharedModule } from '@appshared/shared.module';
+import { AppRoutingModule } from './app-routing.module';
 import { appEffects } from '@appstate/app.effects';
 import { appReducer } from '@appstate/app.reducer';
+import { APP_CONFIG } from '../config/app.config';
 import { environment } from '../environments/environment';
+
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,7 +31,7 @@ import { environment } from '../environments/environment';
     }),
     EffectsModule.forRoot(appEffects),
     HttpClientModule,
-    NgxExtendedPdfViewerModule,
+    AppRoutingModule,
     SharedModule,
   ],
   providers: [{ provide: APP_CONFIG, useValue: environment.configuration }],

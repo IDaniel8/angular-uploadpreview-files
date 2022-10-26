@@ -9,6 +9,9 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
   margin: 0;
   font-family: "MontserratRegular";
   font-size: 14px;
@@ -16,5 +19,4 @@ body {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 20px;
 }

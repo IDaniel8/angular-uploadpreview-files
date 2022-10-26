@@ -1,22 +1,6 @@
-.container {
-  display: flex;
-  flex-direction: row;
-  gap: 22px;
-  align-items: flex-start;
+@import "layout_styles";
 
-  & > * {
-    flex: 1;
-  }
-}
-
-.file-list {
-  &_row {
-    cursor: pointer;
-    padding: 10px;
-    background-color: gray;
-
-    &_odd {
-      background-color: lightgray;
-    }
-  }
+:host ::ng-deep router-outlet + * {
+  padding: 20px 14px;
+  @extend .app-layout-box_dashboard;
 }

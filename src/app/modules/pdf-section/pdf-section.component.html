@@ -1,0 +1,44 @@
+<div class="container">
+  <div>
+    <div>
+      <input
+        type="file"
+        style="display: none"
+        accept="application/pdf"
+        (change)="onFileInput($event)"
+        #fileUpload
+      />
+      <div>
+        {{ selectedFileName || "No file uploaded yet." }}
+
+        <button mat-mini-fab color="primary" (click)="fileUpload.click()">
+          <mat-icon>attach_file</mat-icon>
+        </button>
+      </div>
+    </div>
+    <br />
+    <div *ngIf="selectedDocument$ | async as selectedDoc">
+      <ngx-extended-pdf-viewer
+        [base64Src]="selectedDoc.base64"
+        [showSecondaryToolbarButton]="false"
+        [showPrintButton]="false"
+        [showDownloadButton]="true"
+        [showOpenFileButton]="false"
+        [height]="'100%'"
+        [showHandToolButton]="true"
+      >
+      </ngx-extended-pdf-viewer>
+    </div>
+  </div>
+
+  <div>
+    <div
+      class="file-list_row"
+      [ngClass]="{ 'file-list_row_odd': isOdd }"
+      *ngFor="let doc of documents$ | async; odd as isOdd"
+      (click)="onSelectFile(doc.id)"
+    >
+      {{ doc.filename }}
+    </div>
+  </div>
+</div>
