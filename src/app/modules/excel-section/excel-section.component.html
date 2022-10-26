@@ -1,1 +1,28 @@
-<p>excel-section works!</p>
+<div class="container">
+  <div>
+    <div>
+      <input
+        fileUploadInput
+        #fileInput="fileInput"
+        filetype="EXCEL"
+        accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+        (onParseJSONFile)="renderSpreadSheet($event)"
+      />
+      <div>
+        {{ fileInput.fileName || "Add a XLXS File" }}
+
+        <button
+          mat-mini-fab
+          color="primary"
+          (click)="fileInput.onOpenFileInput()"
+        >
+          <mat-icon>attach_file</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <!-- XLXS Viewer -->
+  </div>
+</div>

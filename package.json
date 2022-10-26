@@ -30,9 +30,11 @@
     "@ngrx/store": "13.2.0",
     "@ngrx/store-devtools": "13.2.0",
     "immer": "^9.0.14",
+    "jspreadsheet-ce": "^4.11.1",
     "ngx-extended-pdf-viewer": "^13.5.0-alpha.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
+    "xlsx": "^0.18.5",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
@@ -46,6 +48,7 @@
     "@babel/preset-env": "^7.17.10",
     "@babel/runtime": "^7.17.9",
     "@types/jasmine": "~3.10.0",
+    "@types/jspreadsheet-ce": "^4.7.3",
     "@types/node": "^12.11.1",
     "concurrently": "^7.2.0",
     "jasmine-core": "~4.0.0",
