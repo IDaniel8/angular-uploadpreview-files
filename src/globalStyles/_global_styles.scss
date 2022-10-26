@@ -1,0 +1,43 @@
+@use "@angular/material" as mat;
+@use "palette" as palette;
+
+@mixin _createViewComponentTheme($basePalette, $hue) {
+  background-color: palette.get-color-from-palette($basePalette, $hue);
+  color: palette.get-contrast-color-from-palette($basePalette, $hue);
+}
+
+// Use Case: Situational Theming Use
+.app-secondary-customtheme {
+  $secondary-primary-palette: mat.define-palette(
+    palette.$secondary-palette,
+    100,
+    100,
+    100
+  );
+  $secondary-accent-palette: mat.define-palette(
+    palette.$warning-palette,
+    100,
+    100,
+    100
+  );
+
+  // Args $primary, $accent, $warn palettes
+  $secondary-theme: mat.define-light-theme(
+    $secondary-primary-palette,
+    $secondary-accent-palette
+  );
+
+  @include mat.all-component-colors($secondary-theme);
+}
+
+.app-button-warning-customtheme {
+  &.mat-primary {
+    @include _createViewComponentTheme(palette.$warning-palette, 100);
+  }
+}
+
+.app-button-error-customtheme {
+  &.mat-primary {
+    @include _createViewComponentTheme(palette.$error-palette, 100);
+  }
+}

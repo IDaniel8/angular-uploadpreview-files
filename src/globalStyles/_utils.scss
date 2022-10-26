@@ -1,0 +1,10 @@
+@use "sass:map";
+// Utility functions or mixins reusable here
+
+@mixin box-shadow($type: null) {
+  box-shadow: map.get($box-shadow, $type);
+}
+
+$box-shadow: (
+  standard: rgba(0, 0, 0, 0.24) 0px 3px 8px,
+);

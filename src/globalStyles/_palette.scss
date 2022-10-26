@@ -1,0 +1,60 @@
+@use "sass:map";
+@use "colors" as colors;
+
+@function get-color-from-palette($palette, $hue) {
+  @if map.has-key($palette, $hue) {
+    @return map.get($palette, $hue);
+  }
+}
+
+@function get-contrast-color-from-palette($palette, $hue) {
+  @return map.get(map.get($palette, contrast), $hue);
+}
+
+// Palette definition
+$primary-palette: (
+  D10: rgb(0, 7, 18),
+  100: colors.$color-navy,
+  L10: rgb(64, 75, 92),
+  L20: rgb(127, 134, 145),
+  L30: rgb(191, 195, 200),
+  L40: rgb(222, 225, 226),
+  L50: rgb(247, 248, 248),
+  contrast: (
+    D10: rgba(colors.$text-color-secondary, 1),
+    100: rgba(colors.$text-color-secondary, 1),
+    L10: rgba(colors.$text-color-secondary, 1),
+    L20: rgba(colors.$text-color-primary, 1),
+    L30: rgba(colors.$text-color-primary, 1),
+    L40: rgba(colors.$text-color-primary, 1),
+    L50: rgba(colors.$text-color-primary, 1),
+  ),
+);
+
+$secondary-palette: (
+  100: colors.$color-cyan,
+  contrast: (
+    100: rgba(colors.$text-color-primary, 1),
+  ),
+);
+
+$accent-palette: (
+  100: colors.$color-gum,
+  contrast: (
+    100: rgba(colors.$text-color-secondary, 1),
+  ),
+);
+
+$warning-palette: (
+  100: colors.$color-tiger,
+  contrast: (
+    100: rgba(colors.$text-color-secondary, 1),
+  ),
+);
+
+$error-palette: (
+  100: colors.$color-chili,
+  contrast: (
+    100: rgba(colors.$text-color-secondary, 1),
+  ),
+);

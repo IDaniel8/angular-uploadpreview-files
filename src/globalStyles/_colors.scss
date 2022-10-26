@@ -1,0 +1,21 @@
+// Color variables
+$color-white: rgb(255, 255, 255);
+$color-black: rgb(2, 2, 2);
+$color-navy: rgba(6, 27, 43);
+$color-cyan: rgb(0, 193, 222);
+$color-honey: rgb(247, 179, 52);
+$color-kiwi: rgb(133, 189, 65);
+$color-sky: rgb(132, 212, 247);
+$color-jungle: rgb(0, 159, 76);
+$color-ocean: rgb(0, 84, 159);
+$color-gum: rgb(218, 22, 132);
+$color-tiger: rgb(245, 128, 31);
+$color-grape: rgb(163, 36, 142);
+$color-chili: rgb(234, 28, 48);
+
+// Featured color definition
+$alert-color-warning: $color-tiger;
+$alert-color-error: $color-chili;
+
+$text-color-primary: $color-navy;
+$text-color-secondary: $color-white;

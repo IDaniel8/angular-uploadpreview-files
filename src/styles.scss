@@ -1,0 +1,20 @@
+@use "colors" as colors;
+@import "fonts";
+@import "layout_styles";
+@import "global_styles";
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "MontserratRegular";
+  font-size: 14px;
+  color: colors.$text-color-primary;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 20px;
+}

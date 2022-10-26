@@ -1,0 +1,20 @@
+/*
+Clearfix for button issue on Angualar-mat
+refer => https://stackoverflow.com/questions/57660748/text-overlaps-on-mat-icon-button
+*/
+button.mat-button-base {
+  min-width: unset;
+}
+
+.app-layout-box_dashboard {
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
+}
+
+.app-layout-box_buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 12px;
+}
